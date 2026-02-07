@@ -20,7 +20,7 @@
 
 #define SK(KEY)     &nk KEY KEY
 
-&kscan0 {
+&kscan {
     debounce-press-ms = <12>;
     debounce-release-ms = <12>;
 };
