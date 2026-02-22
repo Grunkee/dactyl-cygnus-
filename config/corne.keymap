@@ -35,11 +35,9 @@
 &caps_word {
     continue-list = <UNDERSCORE MINUS BACKSPACE>;
 };
-/ {
     chosen {
       zmk,matrix_transform = &five_column_transform;
     };
-};
 / {
         combos {
             compatible = "zmk,combos";
