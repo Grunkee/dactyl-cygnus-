@@ -35,7 +35,11 @@
 &caps_word {
     continue-list = <UNDERSCORE MINUS BACKSPACE>;
 };
-
+/ {
+    chosen {
+      zmk,matrix_transform = &five_column_transform;
+    };
+};
 / {
         combos {
             compatible = "zmk,combos";
@@ -124,42 +128,42 @@
 
             default_layer {
                 bindings = <
-                  &none  &kp B       &kp L       &kp D       &kp C       &kp V       /**/ /**/       &kp J       &kp Y       &kp O       &kp U       &kp COMMA  &none 
-                  &none  &kp N       &kp R       &kp T       &kp S       &kp G       /**/ /**/       &kp P       &kp H       &kp A       &kp E       &kp I      &none
-                  &none  &kp X       &kp Q       &kp M       &kp W       &kp Z       /**/ /**/       &kp K       &kp F       &kp SQT     &kp SEMI    &kp DOT    &none
-                                            &none            &mo NAV    &kp BSPC                     &lt SYM SPC      &mo NUM &none
+                   &kp B       &kp L       &kp D       &kp C       &kp V       /**/ /**/       &kp J       &kp Y       &kp O       &kp U       &kp COMMA   
+                    &kp N       &kp R       &kp T       &kp S       &kp G       /**/ /**/       &kp P       &kp H       &kp A       &kp E       &kp I      
+                    &kp X       &kp Q       &kp M       &kp W       &kp Z       /**/ /**/       &kp K       &kp F       &kp SQT     &kp SEMI    &kp DOT    
+                                            &kp N1            &kp N2    &kp BSPC                     &lt SYM SPC      &mo NUM &none
                 >;
                 };
 
                 nav {
                 bindings = <
-                 &none   &none       &none       &none       &none       &none       /**/ /**/       &kp C_PP    VOL_D       VOL_U       &none       &trans     &none
-                 &none   SK(LGUI)    SK(LALT)    SK(LCTRL)   SK(LSHFT)   &none       /**/ /**/       &kp LEFT    &kp DOWN    &kp UP      &kp RIGHT   &kp DEL    &none
-                 &none   &none       &none       &none       &none       &none       /**/ /**/       &none       &kp HOME    &kp END     &none       &kp SLASH  &none
+                    &none       &none       &none       &none       &none       /**/ /**/       &kp C_PP    VOL_D       VOL_U       &none       &trans     
+                    SK(LGUI)    SK(LALT)    SK(LCTRL)   SK(LSHFT)   &none       /**/ /**/       &kp LEFT    &kp DOWN    &kp UP      &kp RIGHT   &kp DEL    
+                    &none       &none       &none       &none       &none       /**/ /**/       &none       &kp HOME    &kp END     &none       &kp SLASH  
                                             &none       &none       &none                       &kp RET     &none       &none
                 >;
                 };
                 num {
                 bindings = <
-                 &none   &kp LBKT    &kp N7      &kp N8      &kp N9      &kp RBKT    /**/ /**/       &kp LBRC    &kp LPAR    &kp RPAR    &kp RBRC    &trans    &none
-                 &none   &kp SEMI    &kp N4      &kp N5      &kp N6      &kp EQUAL   /**/ /**/       &none       SK(RSHFT)   SK(RCTRL)   SK(RALT)    SK(RGUI)  &none
-                 &none   &kp GRAVE   &kp N1      &kp N2      &kp N3      &kp BSLH    /**/ /**/       &none       &none       &none       &kp DOT     &none     &none 
+                    &kp LBKT    &kp N7      &kp N8      &kp N9      &kp RBKT    /**/ /**/       &kp LBRC    &kp LPAR    &kp RPAR    &kp RBRC    &trans    
+                    &kp SEMI    &kp N4      &kp N5      &kp N6      &kp EQUAL   /**/ /**/       &none       SK(RSHFT)   SK(RCTRL)   SK(RALT)    SK(RGUI)  
+                    &kp GRAVE   &kp N1      &kp N2      &kp N3      &kp BSLH    /**/ /**/       &none       &none       &none       &kp DOT     &none      
                                             &none            &kp N0      &kp MINUS                   &none       &none &none
                 >;
                 };	                
                 sym {
                 bindings = <
-                 &none   &kp GRAVE  &kp LT    &kp GT     &kp MINUS   &kp PIPE   /**/ /**/   &kp CARET   &kp LBRC   &kp RBRC     &kp DOLLAR   &none  &none
-                 &none   &kp EXCL   &kp ASTRK &kp FSLH &kp EQUAL   &kp AMPS   /**/ /**/   &kp HASH    &kp LPAR   &kp RPAR     &kp SEMI     &kp DQT  &none
-                 &none   &kp TILDE  &kp PLUS  &kp LBKT   &kp RBKT    &kp PRCNT  /**/ /**/   &kp AT      &kp COLON  &kp COMMA &kp DOT                &none             &kp SQT
+                    &kp GRAVE  &kp LT    &kp GT     &kp MINUS   &kp PIPE   /**/ /**/   &kp CARET   &kp LBRC   &kp RBRC     &kp DOLLAR   &none  
+                    &kp EXCL   &kp ASTRK &kp FSLH &kp EQUAL   &kp AMPS   /**/ /**/   &kp HASH    &kp LPAR   &kp RPAR     &kp SEMI     &kp DQT  
+                    &kp TILDE  &kp PLUS  &kp LBKT   &kp RBKT    &kp PRCNT  /**/ /**/   &kp AT      &kp COLON  &kp COMMA &kp DOT       &kp SQT
                                          &none           &kp BSLH  &none                  &none       &none &none
                 >;
                 };	
                 fun {
                 bindings = <
-                 &none   &kp F12     &kp F7      &kp F8      &kp F9      &kp PSCRN   /**/ /**/       &none       &none       &none       &none       &bootloader &none
-                 &none   &kp F11     &kp F4      &kp F5      &kp F6      &kp SLCK    /**/ /**/       &none       SK(RSHFT)   SK(RCTRL)   SK(RALT)    SK(RGUI)    &none
-                 &none   &kp F10     &kp F1      &kp F2      &kp F3      PB          /**/ /**/       BTCLR       BT0         BT1         BT2         BT3         &none   
+                    &kp F12     &kp F7      &kp F8      &kp F9      &kp PSCRN   /**/ /**/       &none       &none       &none       &none       &bootloader 
+                    &kp F11     &kp F4      &kp F5      &kp F6      &kp SLCK    /**/ /**/       &none       SK(RSHFT)   SK(RCTRL)   SK(RALT)    SK(RGUI)    
+                    &kp F10     &kp F1      &kp F2      &kp F3      PB          /**/ /**/       BTCLR       BT0         BT1         BT2         BT3            
                                             &none            &none       &none                       &none       &none &none
                 >;
                 };	
